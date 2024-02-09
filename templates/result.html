@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p class="result-text">The predicted result is: {{ prediction }}</p>
+        <p class="result-interpretation">
+            {% if prediction == 0 %}
+                The model predicts no presence of heart disease.
+            {% elif prediction == 1 %}
+                The model predicts the presence of heart disease.
+            {% else %}
+                Invalid prediction value.
+            {% endif %}
+        </p>
+    </div>
+</body>
+</html>
